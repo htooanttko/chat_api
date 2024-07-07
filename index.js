@@ -16,6 +16,19 @@ const expressServer = app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
 
+app.get("/api/test",function(req,res){
+  res.json([
+    {
+      name:"Htoo",
+      age:20
+    },
+    {
+      name:"John",
+      age:21
+    }
+  ]);
+})
+
 let users = [];
 
 const io = new Server(expressServer, {
