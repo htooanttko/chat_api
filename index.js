@@ -12,11 +12,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));
 
-const expressServer = app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
-});
-
-app.get("/api/test",function(req,res){
+app.get("/api/test",(req,res)=>{
   res.json([
     {
       name:"Htoo",
@@ -28,6 +24,10 @@ app.get("/api/test",function(req,res){
     }
   ]);
 })
+
+const expressServer = app.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`);
+});
 
 let users = [];
 
